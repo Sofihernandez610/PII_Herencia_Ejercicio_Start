@@ -1,40 +1,47 @@
 ﻿using System;
 using System.Collections;
+using Library;
 
 namespace PII_Herencia
 {
+    
     class Program
     {
         static void Main(string[] args)
         {
-            /*
-            En éste método deberas mostrar un ejemplo de funcionamiento de tu programa an pseudocódigo. A continuación te 
-            planteamos un ejemplo de como hacerlo. Esto no significa que te limites a hacer solamente esto, debes pensar 
-            en grande!
 
-            Usuario pasajero1 = nuevo Pasajero()
-            Usuario pasajero2 = nuevo Pasajero()
-            Usuario pasajero3 = nuevo Pasajero()
-            Usuario conductor1 = nuevo Conductor()
-            Usuario conductorPool1 = nuevo ConductorPool(maxPasajeros = 3)
-            UcuRideShare rideShare = nuevo UcuRideShare()
+            Person pasajero1 = new Passenger("Juan", "Perez", 123451234, 10);
+            Person pasajero2 = new Passenger("Martin", "Gonzalez", 98769876, 9);
+
+            Person conductor1 = new Driver("Juan", "Perez", 123451234, 10, "Volkswagen up");
+            Person conductorPool1 = new PoolDriver("Paula", "Perez", 4566540, 9, "Ford Ranger", 8);
+            UcuRideShare rideShare = new UcuRideShare();
+
+            rideShare.AddUser(conductor1);
             
-            rideShare.Add(conductor1)
-            Se publica en Twitter un nuevo conductor!
 
-            rideShare.Add(conductorPool1)
-            Se publica en Twitter un nuevo conductor!
+            rideShare.AddUser(conductorPool1);
+          
+
+            rideShare.AddUser(pasajero1);
             
-            rideShare.Add(pasajero1)
-            Se publica en Twitter nuevo registro de pasajero!
-            
-            rideShare.Add(pasajero2)
-            Se publica en Twitter nuevo registro de pasajero!
 
-            rideShare.Add(pasajero3)
-            Se publica en Twitter nuevo registro de pasajero!
+            rideShare.AddUser(pasajero2);
+              
 
-            */
+
+
+            foreach (var user in rideShare.users)
+            {
+                Console.WriteLine(user.Name);
+            }
+
+
+
+           
+
+
+        
         }
     }
 }
